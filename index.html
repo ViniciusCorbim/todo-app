@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <h1>Todo</h1>
+        <button id="btn_change_theme" class="btn-transparent">
+          <img src="./assets/images/icon-sun.svg" alt="theme change icon" />
+        </button>
+      </section>
+    </header>
+
+    <main>
+      <section id="create_todo_section">
+        <button class="btn-transparent">
+          <div class="circle"></div>
+        </button>
+        <input id="todo_input" type="text" placeholder="Create a new todo..." />
+      </section>
+
+      <section id="section_todo_list">
+        <ul id="todo_list">
+          <li id="item1">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>Complete Online JavaScript course</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+
+          <li id="item2">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>Jog around the park 3x</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+
+          <li id="item3">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>10 minutes meditation</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+
+          <li id="item4">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>Read for 1 hour</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+
+          <li id="item5">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>Pick up groceries</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+
+          <li id="item6">
+            <button class="btn-transparent">
+              <div class="circle"></div>
+            </button>
+
+            <p>Complete Online JavaScript course</p>
+
+            <button class="btn-transparent">
+              <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section id="todo_list_menu">
+        <p>
+          <span id="items_left_span"><!-- Add dynamic number --></span>
+          items left
+        </p>
+
+        <nav>
+          <button id="btn_all" class="btn-transparent button_selected">
+            All
+          </button>
+          <button id="btn_active" class="btn-transparent">active</button>
+          <button id="btn_completed" class="btn-transparent">Completed</button>
+        </nav>
+
+        <button class="btn-transparent">Clear Completed</button>
+      </section>
+
+      <footer>
+        <p>Drag and drop to reorder list</p>
+      </footer>
+    </main>
+  </body>
+</html>
