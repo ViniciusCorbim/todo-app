@@ -1,0 +1,141 @@
+@import "variables";
+@import "class";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-size: 100%;
+
+  font-family: $fontFamily;
+}
+
+body {
+  background-color: getVar(backgroundColor);
+  background-image: getVar(mobileBackgroundImage);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  header {
+    margin-top: 48px;
+    margin-bottom: 30px;
+
+    section {
+      h1 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.45em;
+        font-size: 2.3rem;
+        height: 30px;
+      }
+    }
+  }
+
+  main {
+    section {
+      background-color: getVar(color1);
+
+      &#create_todo_section {
+        margin-bottom: 14px;
+        padding: 13px 20px;
+        border-radius: 6px;
+
+        input {
+          background-color: transparent;
+          font-size: 0.95rem;
+          color: getVar(color2);
+          width: 85%;
+
+          &::placeholder {
+            color: getVar(color5);
+            opacity: 0.7;
+          }
+
+          &:hover,
+          &:focus {
+            &::placeholder {
+              opacity: 1;
+            }
+          }
+
+          &.completed {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      &#section_todo_list {
+        box-shadow: 0px 50px 10px 0px #0000002b, 0px -1px 10px 0px #0000002b;
+        border-radius: 6px 6px 0 0;
+        font-size: 0.95rem;
+
+        ul {
+          li {
+            padding: 15px 20px;
+            list-style: none;
+            border-bottom: 1px solid getVar(color3);
+
+            p {
+              min-width: 70%;
+              max-width: calc(87vw -100px);
+              color: getVar(color5);
+            }
+
+            &.completed {
+              p {
+                color: getVar(color3);
+                text-decoration: line-through;
+              }
+            }
+          }
+        }
+      }
+
+      &#todo_list_menu {
+        box-shadow: 0px 3px 20px 0px #00000047;
+        padding: 18px 20px 18px;
+        border-radius: 0 0 7px 7px;
+        position: relative;
+
+        p {
+          color: getVar(color4);
+          font-weight: 100;
+        }
+
+        nav {
+          position: absolute;
+          top: 130%;
+          left: 0;
+
+          width: 87vw;
+          max-width: 550px;
+          padding: 15px 30px;
+          border-radius: 7px;
+
+          background-color: getVar(color1);
+          box-shadow: 0px 0px 40px 7px #0000003b;
+
+          justify-content: center;
+          gap: 20px;
+
+          .selected {
+            color: $primaryColor1;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin: 120px auto 70px;
+
+    p {
+      text-shadow: 1px 1px 1px #00000036;
+      color: getVar(color6);
+    }
+  }
+}

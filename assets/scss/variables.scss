@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+$fontFamily: "Josefin Sans", sans-serif;
+$primaryColor1: hsl(220, 98%, 61%);
+$boxShadow: 0px 35px 31px 10px #0000001a;
+
+// variables for dark mode
+$varsDark: (
+  backgroundColor: hsl(235, 21%, 11%),
+  color1: hsl(235, 24%, 19%),
+  color2: hsl(236, 33%, 92%),
+  color3: hsl(233, 14%, 35%),
+  color4: hsl(234, 11%, 52%),
+  color5: hsl(234, 39%, 85%),
+  color6: hsl(233, 14%, 35%),
+  mobileBackgroundImage: url(../images/bg-mobile-dark.jpg),
+  desktopBackgroundImage: url(../images/bg-desktop-dark.jpg),
+);
+
+// variables for light mode
+$varsLight: (
+  backgroundColor: hsl(236, 33%, 92%),
+  color1: hsl(0, 0%, 98%),
+  color2: hsl(235, 19%, 35%),
+  color3: hsl(220, 3%, 77%),
+  color4: hsl(233, 11%, 52%),
+  color5: hsl(235, 19%, 35%),
+  color6: hsl(233, 14%, 35%),
+  mobileBackgroundImage: url(../images/bg-mobile-light.jpg),
+  desktopBackgroundImage: url(../images/bg-desktop-light.jpg),
+);
+
+// create css variables for dark mode
+:root {
+  @each $name, $value in $varsDark {
+    --#{$name}: #{$value};
+  }
+}
+
+// create css variables for light mode
+.lightMode:root {
+  @each $name, $value in $varsLight {
+    --#{$name}: #{$value};
+  }
+}
+
+@function getVar($varName) {
+  @return var(--#{$varName});
+}

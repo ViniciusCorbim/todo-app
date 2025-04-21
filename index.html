@@ -11,11 +11,13 @@
       href="./assets/images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
     <title>Frontend Mentor | Todo app</title>
   </head>
   <body>
-    <header>
-      <section>
+    <header class="container">
+      <section class="row">
         <h1>Todo</h1>
         <button id="btn_change_theme" class="btn-transparent">
           <img src="./assets/images/icon-sun.svg" alt="theme change icon" />
@@ -23,30 +25,30 @@
       </section>
     </header>
 
-    <main>
-      <section id="create_todo_section">
-        <button class="btn-transparent">
+    <main class="container">
+      <section id="create_todo_section" class="row">
+        <button id="create_todo_state_btn" class="btn-transparent">
           <div class="circle"></div>
         </button>
         <input id="todo_input" type="text" placeholder="Create a new todo..." />
       </section>
 
       <section id="section_todo_list">
-        <ul id="todo_list">
-          <li id="item1">
-            <button class="btn-transparent">
-              <div class="circle"></div>
+        <ul>
+          <li class="row completed" id="item1">
+            <button class="btn-transparent mark_button">
+              <div class="circle completed"></div>
             </button>
 
             <p>Complete Online JavaScript course</p>
 
-            <button class="btn-transparent">
+            <button class="btn-transparent mark_button">
               <img src="./assets/images/icon-cross.svg" alt="icon-cross" />
             </button>
           </li>
 
-          <li id="item2">
-            <button class="btn-transparent">
+          <li class="row" id="item2">
+            <button class="btn-transparent mark_button">
               <div class="circle"></div>
             </button>
 
@@ -57,8 +59,8 @@
             </button>
           </li>
 
-          <li id="item3">
-            <button class="btn-transparent">
+          <li class="row" id="item3">
+            <button class="btn-transparent mark_button">
               <div class="circle"></div>
             </button>
 
@@ -69,8 +71,8 @@
             </button>
           </li>
 
-          <li id="item4">
-            <button class="btn-transparent">
+          <li class="row" id="item4">
+            <button class="btn-transparent mark_button">
               <div class="circle"></div>
             </button>
 
@@ -81,8 +83,8 @@
             </button>
           </li>
 
-          <li id="item5">
-            <button class="btn-transparent">
+          <li class="row" id="item5">
+            <button class="btn-transparent mark_button">
               <div class="circle"></div>
             </button>
 
@@ -93,8 +95,8 @@
             </button>
           </li>
 
-          <li id="item6">
-            <button class="btn-transparent">
+          <li class="row" id="item6">
+            <button class="btn-transparent mark_button">
               <div class="circle"></div>
             </button>
 
@@ -107,26 +109,36 @@
         </ul>
       </section>
 
-      <section id="todo_list_menu">
+      <section id="todo_list_menu" class="row">
         <p>
           <span id="items_left_span"><!-- Add dynamic number --></span>
           items left
         </p>
 
-        <nav>
-          <button id="btn_all" class="btn-transparent button_selected">
+        <nav class="row">
+          <button
+            id="btn_all"
+            class="btn-transparent todo_visible_button selected"
+          >
             All
           </button>
-          <button id="btn_active" class="btn-transparent">active</button>
-          <button id="btn_completed" class="btn-transparent">Completed</button>
+          <button id="btn_active" class="btn-transparent todo_visible_button">
+            Active
+          </button>
+          <button
+            id="btn_completed"
+            class="btn-transparent todo_visible_button"
+          >
+            Completed
+          </button>
         </nav>
 
         <button class="btn-transparent">Clear Completed</button>
       </section>
-
-      <footer>
-        <p>Drag and drop to reorder list</p>
-      </footer>
     </main>
+
+    <footer>
+      <p>Drag and drop to reorder list</p>
+    </footer>
   </body>
 </html>
