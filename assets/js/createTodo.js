@@ -61,6 +61,7 @@ const createTodoHtml = (text, id, state = false) => {
   li.classList.add("row");
   li.classList.toggle("completed", state);
   li.setAttribute("id", id);
+  li.setAttribute("draggable", "true");
 
   li.appendChild(markButton);
   li.appendChild(p);
@@ -68,6 +69,7 @@ const createTodoHtml = (text, id, state = false) => {
 
   const ul = document.querySelector("#section_todo_list ul");
   ul.appendChild(li);
+  sortable();
 };
 
 todo_input.addEventListener("keypress", function (e) {

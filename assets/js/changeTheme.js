@@ -1,21 +1,8 @@
 //-----------------------------Change theme color-----------------------------\\
 const icon = document.querySelector("#btn_change_theme img");
 
-//Animation
-// let rotate = 0;
-// function rotateAnimation() {
-//   rotate++;
-//   icon.style.transform = "rotate(" + rotate + "deg)";
-
-//   if (rotate == 360) rotate = 0;
-// }
-
-// const rotateInterval = setInterval(rotateAnimation, 10);
-//end Animation
-
 //AnimationA - image decrease
 //AnimationB - image increase
-
 function changeTheme() {
   const src = document.documentElement.classList.toggle("lightMode")
     ? "./assets/images/icon-moon.svg"
