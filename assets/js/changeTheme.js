@@ -9,6 +9,11 @@ function changeTheme() {
     : "./assets/images/icon-sun.svg";
   icon.src = src;
 
+  let theme = document.documentElement.classList.contains("lightMode")
+    ? "light"
+    : "dark";
+  localStorage.setItem("theme", theme); // save theme
+
   icon.classList.toggle("animationA", false);
   icon.classList.toggle("animationB", true);
 }
@@ -19,6 +24,6 @@ btn_change_theme.addEventListener("click", () => {
 
   icon.classList.toggle("animationB", false);
   icon.classList.toggle("animationA", true);
-  changeThemeTimeout = setTimeout(changeTheme, 350);
+  changeThemeTimeout = setTimeout(changeTheme, 300);
 });
 //-----------------------------End Change theme color-----------------------------\\

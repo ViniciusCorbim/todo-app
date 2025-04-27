@@ -1,20 +1,6 @@
 //Drag and Drop to Reorder in Computer
 let dragged = null;
 
-function sortable() {
-  const elementTodo = getElementTodo().all;
-  elementTodo.map((i) => {
-    i.addEventListener("dragstart", dragStart);
-    i.addEventListener("dragenter", dragEnter);
-    i.addEventListener("dragend", dragEnd);
-
-    i.addEventListener("touchstart", touchStart);
-    i.addEventListener("touchmove", touchMove);
-    i.addEventListener("touchend", touchEnd);
-  });
-}
-sortable();
-
 //Drag and Drop to Reorder List in Computer
 function dragStart() {
   dragged = this;
@@ -30,7 +16,7 @@ function dragEnter() {
 }
 
 function dragEnd() {
-  // console.log("soltou");
+  setItem(getTodoList());
 }
 
 //Drag and Drop to Reorder List in Phone
@@ -68,9 +54,7 @@ function touchMove(e) {
     let numberItem = Number.parseInt(this.id.substr(4));
     let previousSibling = document.getElementById("item" + (numberItem - 1));
 
-    let ul = document.querySelector("#section_todo_list ul");
-    ul.insertBefore(previousSibling, this.nextSibling);
-
+    this.parentNode.insertBefore(previousSibling, this.nextSibling);
     [previousSibling.id, this.id] = [this.id, previousSibling.id];
   }
 
@@ -81,4 +65,20 @@ function touchMove(e) {
 
 function touchEnd() {
   document.body.style.overflow = null;
+
+  setItem(getTodoList());
 }
+
+function sortable() {
+  const elementTodo = getElementTodo().all;
+  elementTodo.map((i) => {
+    i.addEventListener("dragstart", dragStart);
+    i.addEventListener("dragenter", dragEnter);
+    i.addEventListener("dragend", dragEnd);
+
+    i.addEventListener("touchstart", touchStart);
+    i.addEventListener("touchmove", touchMove);
+    i.addEventListener("touchend", touchEnd);
+  });
+}
+sortable();

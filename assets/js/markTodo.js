@@ -14,6 +14,8 @@ function markTodo() {
 
   printItemsLeft();
   setVisibleTodo(visibleTodo);
+
+  setItem(getTodoList());
 }
 
 const markTodoButtons = [...document.querySelectorAll(".mark_button")];

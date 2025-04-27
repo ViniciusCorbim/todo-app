@@ -1,9 +1,3 @@
-//--------------------------define visible todo--------------------------\\
-let visibleTodo = "all";
-//all
-//completed
-//active
-
 const getElementTodo = () => {
   const elementTodo = {
     all: [...document.querySelectorAll("#section_todo_list ul li")],
@@ -19,6 +13,31 @@ const getElementTodo = () => {
 
   return elementTodo;
 };
+
+const getTodoList = () => {
+  let todoText;
+  let todoState;
+  let todoList = [];
+
+  getElementTodo().all.map((e) => {
+    todoText = e.innerText;
+    todoState = e.classList.contains("completed") ? true : false;
+
+    todoList.push({ text: todoText, state: todoState });
+  });
+
+  return todoList;
+};
+
+//set item in local storage
+const setItem = (value) =>
+  localStorage.setItem("todoList", JSON.stringify(value));
+
+//--------------------------define visible todo--------------------------\\
+let visibleTodo = "all";
+//all
+//completed
+//active
 
 const todo_visible_button = [
   ...document.querySelectorAll("#todo_list_menu .todo_visible_button"),

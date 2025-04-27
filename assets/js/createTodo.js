@@ -69,7 +69,10 @@ const createTodoHtml = (text, id, state = false) => {
 
   const ul = document.querySelector("#section_todo_list ul");
   ul.appendChild(li);
+
   sortable();
+  hideIconCross();
+  printItemsLeft();
 };
 
 todo_input.addEventListener("keypress", function (e) {
@@ -80,9 +83,9 @@ todo_input.addEventListener("keypress", function (e) {
   createTodoHtml(text, id, todoState);
 
   todo_input.value = "";
-  hideIconCross();
-  printItemsLeft();
   setVisibleTodo(visibleTodo);
+
+  setItem(getTodoList());
 });
 
 //--------------------------end Create Todo--------------------------\\

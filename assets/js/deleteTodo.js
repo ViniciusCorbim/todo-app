@@ -27,10 +27,21 @@ const hideIconCross = () => {
 };
 hideIconCross();
 
+const setTodoId = () => {
+  let id = 0;
+  getElementTodo().all.map((e) => {
+    id++;
+    e.id = "item" + id;
+  });
+};
+
 //Delete todo
 function deleteTodo() {
   this.parentElement.remove();
+  setTodoId();
   printItemsLeft();
+
+  setItem(getTodoList());
 }
 getDeleteButtons().map((element) => {
   element.addEventListener("click", deleteTodo);
@@ -42,7 +53,10 @@ function deleteCompletedTodo() {
     e.remove();
   });
 
+  setTodoId();
   printItemsLeft();
+
+  setItem(getTodoList());
 }
 
 const button_clear_completed_todo = document.getElementById(
