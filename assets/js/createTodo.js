@@ -41,6 +41,7 @@ const createTodoHtml = (text, id, state = false) => {
   const markButton = document.createElement("button");
   markButton.classList.add("btn-transparent");
   markButton.classList.add("mark_button");
+  markButton.setAttribute("aria-label", "Mark button");
   markButton.appendChild(circleDiv);
   markButton.addEventListener("click", markTodo);
 
@@ -54,6 +55,7 @@ const createTodoHtml = (text, id, state = false) => {
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("btn-transparent");
   deleteButton.classList.add("delete_button");
+  deleteButton.setAttribute("aria-label", "delete button");
   deleteButton.appendChild(crossImg);
   deleteButton.addEventListener("click", deleteTodo);
 
