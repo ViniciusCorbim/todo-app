@@ -20,11 +20,11 @@ Os usuários devem ser capazes de:
 
 ### Captura de tela
 
-![Prévia de design para o desafio de codificação do aplicativo Todo](./design/Screenshot-Frontend-Mentor-Todo-app.jpg)
+![Prévia de design para o desafio de codificação do aplicativo Todo](./design/Screenshot-Frontend-Mentor-Todo-app.png)
 
 ### Links
 
-- URL da solução: https://github.com/ViniciusCorbim/todo-app
+- URL da solução: https://www.frontendmentor.io/solutions/responsive-landing-page-using-sass-and-localstorage-qXdDydAeo6
 - URL do site ao vivo: https://viniciuscorbim.github.io/todo-app/
 
 ### Construído com
