@@ -3,6 +3,10 @@
     background-image: getVar(desktopBackgroundImage);
     background-size: 1450px;
 
+    header {
+      margin-top: 80px;
+    }
+
     main {
       section {
         &#todo_list_menu {
